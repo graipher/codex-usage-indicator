@@ -1,6 +1,6 @@
 # Codex Usage Indicator
 
-GNOME Shell extension for GNOME Shell `50` that shows remaining Codex usage in the top bar and displays the current 5-hour and weekly windows in the popup.
+GNOME Shell extension for GNOME Shell `45`–`51` that shows remaining Codex usage in the top bar and displays the current 5-hour and weekly windows in the popup.
 
 ## Features
 
@@ -54,6 +54,7 @@ gjs -m tests/usageApi.test.js
 gjs -m tests/usageApiHttp.test.js
 gjs -m tests/limitReset.test.js
 gjs -m tests/resetCreditExpiry.test.js
+gjs -m tests/menuLayout.test.js
 ```
 
 ## Notes

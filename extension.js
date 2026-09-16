@@ -26,6 +26,10 @@ const PROGRESS_BAR_WIDTH = 360;
 const PROGRESS_BAR_HEIGHT = 7;
 const PANEL_ICON_SIZE = 16;
 const MENU_TITLE_STYLE = 'color: #fff;';
+// GNOME 48 added orientation; GNOME 51 removed vertical.
+const VERTICAL_BOX_LAYOUT_PROPS = 'orientation' in St.BoxLayout.prototype
+    ? {orientation: Clutter.Orientation.VERTICAL}
+    : {vertical: true};
 
 const CodexUsageIndicator = GObject.registerClass(
 class CodexUsageIndicator extends PanelMenu.Button {
@@ -292,7 +296,7 @@ function createInfoMenuItem(title, subtitle = '', meta = '') {
     });
 
     const content = new St.BoxLayout({
-        vertical: true,
+        ...VERTICAL_BOX_LAYOUT_PROPS,
         x_expand: true,
     });
     content.add_child(new St.Label({
@@ -328,7 +332,7 @@ function createUsageProgressMenuItem(title, window, displayMode) {
     });
 
     const content = new St.BoxLayout({
-        vertical: true,
+        ...VERTICAL_BOX_LAYOUT_PROPS,
         x_expand: true,
     });
 
